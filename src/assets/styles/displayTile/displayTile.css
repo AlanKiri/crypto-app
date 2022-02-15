@@ -1,0 +1,20 @@
+.cryptoElement {
+    display:flex;
+}
+
+.cryptoElement > img {
+    height:100px;
+    width:100px;
+    margin: 20px 20px;
+}
+
+.cryptoElement >h2 {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin: 20px 20px;
+    height:100px;
+    width:300px;
+    font-size:30px;
+    text-align: center;
+}
