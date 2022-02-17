@@ -38,6 +38,15 @@
     outline: none;
 }
 
+.header-search > button {
+    color: white;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    margin-left: 20px;
+}
+
+
 .controls{
     display: flex;
 }

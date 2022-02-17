@@ -1,5 +1,6 @@
 .cryptoElement {
     display:flex;
+    color:white;
 }
 
 .cryptoElement > img {
