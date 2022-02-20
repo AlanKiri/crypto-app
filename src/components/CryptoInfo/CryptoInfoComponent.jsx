@@ -9,6 +9,7 @@ const CryptoInfoComponent = ({
   price_change,
   price_change_percentage,
   crypto_id,
+  isNegative,
 }) => {
   return (
     <div className="crypto_info_container">
@@ -20,12 +21,12 @@ const CryptoInfoComponent = ({
         {currency === "Eur" ? "€" : "$"}
       </h2>
       <div>
-        <h3>
+        <h3 className={isNegative(price_change)}>
           {price_change && price_change.toFixed()}
           {""}
           {currency === "Eur" ? "€" : "$"}
         </h3>
-        <h3>
+        <h3 className={isNegative(price_change_percentage)}>
           {price_change_percentage && price_change_percentage.toFixed(2)}%
         </h3>
       </div>

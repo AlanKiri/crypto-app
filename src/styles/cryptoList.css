@@ -28,8 +28,13 @@
   border-radius: 20px;
   color: white;
   font-size: 48px;
-
+  transition:background-color .3s;
 }
+
+.crypto_element:hover {
+  cursor: pointer;
+  background-color: rgb(111, 106, 74)
+  }
 
 .crypto_element_header {
   display: flex;
@@ -68,7 +73,7 @@
 }
 
 .crypto_element_text > p:first-child {
-    font-size: 36px;
+    font-size:1.8rem;
     font-weight: 700;
 }
 

@@ -9,7 +9,7 @@ const Index = () => {
   return (
     <div className="index">
       <div className="container">
-        <Header />
+        <Header displayControls={false} indexPage={true} />
         <div className="content">
           <div className="left-section">
             <h2>Start your career right now and here!</h2>
@@ -25,12 +25,12 @@ const Index = () => {
             <div className="bitcoin-card">
               <img src={bitcoin} alt="bitcoin" />
               <p>btc</p>
-              <p>-1088$</p>
+              <p className="negative">-1088$</p>
             </div>
             <div className="ethereum-card">
               <img src={ethereum} alt="ethereum" />
               <p>eth</p>
-              <p>-132$</p>
+              <p className="negative">-132$</p>
             </div>
           </div>
         </div>

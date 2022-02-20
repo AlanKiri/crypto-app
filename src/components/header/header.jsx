@@ -2,7 +2,13 @@ import "../../styles/header.css";
 import logo from "../../images/logo.png";
 import { Link } from "react-router-dom";
 
-const Header = ({ setCurrency, search, setSearch }) => {
+const Header = ({
+  setCurrency,
+  search,
+  setSearch,
+  displayControls,
+  indexPage,
+}) => {
   return (
     <div className="header">
       <div
@@ -16,37 +22,40 @@ const Header = ({ setCurrency, search, setSearch }) => {
         </div>
         <p>Crypto exchange</p>
       </div>
-      <div className="header-controls">
-        <div className="header-search">
-          <input
-            type="text"
-            placeholder="Search"
-            value={search}
-            onChange={(e) => {
-              setSearch(e.target.value);
-            }}
-          />
+      {displayControls && (
+        <div className="header-controls">
+          <div className="header-search">
+            <input
+              type="text"
+              placeholder="Search"
+              value={search}
+              onChange={(e) => {
+                setSearch(e.target.value);
+              }}
+            />
+          </div>
+          <div className="header-currency">
+            <select
+              name="currency"
+              id="currency"
+              onChange={(e) => {
+                setCurrency(e.target.value);
+              }}
+            >
+              <option value="Usd">Usd</option>
+              <option value="Eur">Eur</option>
+            </select>
+          </div>
         </div>
-        <div className="header-currency">
-          <select
-            name="currency"
-            id="currency"
-            onChange={(e) => {
-              setCurrency(e.target.value);
-            }}
-          >
-            <option value="Usd">Usd</option>
-            <option value="Eur">Eur</option>
-          </select>
-        </div>
-      </div>
+      )}
+
       <div className="header-navigation">
         <Link to="/">
           {" "}
-          <p>Main</p>
+          <p className={indexPage && "marked_page"}>Main</p>
         </Link>
         <Link to="/crypto">
-          <p>Crypto</p>
+          <p className={!indexPage && "marked_page"}>Crypto</p>
         </Link>
       </div>
     </div>

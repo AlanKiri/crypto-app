@@ -5,12 +5,13 @@
     flex-direction:column;
     align-items: center;
     color:white;
+    text-align: center;
 
 }
 
 .crypto_info_container > h1{
     margin: 20px 0 0;
-    font-size: 48px;
+    font-size: 2rem;
     font-weight: 700;
 
 }

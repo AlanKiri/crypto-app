@@ -26,6 +26,14 @@ body {
   align-items: center;
 }
 
+.negative {
+  color: rgba(186, 27, 27, 1) !important;
+}
+
+.positive {
+
+}
+
 iframe {
   display:none;
 }

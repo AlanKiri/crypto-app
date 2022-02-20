@@ -15,6 +15,8 @@ const CryptoList = ({ currency, setCurrency }) => {
           setCurrency={setCurrency}
           search={search}
           setSearch={setSearch}
+          displayControls={true}
+          indexPage={false}
         />
         <div className="crypto_data">
           {!search &&

@@ -1,5 +1,4 @@
 import React from "react";
-import "../../styles/cryptoElement.css";
 import { Box, Modal } from "@mui/material";
 import CryptoInfoComponent from "../CryptoInfo/CryptoInfoComponent";
 
@@ -32,6 +31,14 @@ const DisplayTile = ({
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
+  const isNegative = (value) => {
+    if (value < 0) {
+      return "negative";
+    } else {
+      return "";
+    }
+  };
+
   return (
     <div className={"crypto_element"} onClick={handleOpen}>
       <div className="crypto_element_header">
@@ -45,12 +52,14 @@ const DisplayTile = ({
           {""}
           {currency === "Eur" ? "€" : "$"}
         </p>
-        <p>
+        <p className={isNegative(price_change)}>
           {price_change && price_change.toFixed(2)}
           {""}
           {currency === "Eur" ? "€" : "$"}
         </p>
-        <p>{price_change_percentage && price_change_percentage.toFixed(2)}%</p>
+        <p className={isNegative(price_change)}>
+          {price_change_percentage && price_change_percentage.toFixed(2)}%
+        </p>
       </div>
       <Modal
         open={open}
@@ -60,6 +69,7 @@ const DisplayTile = ({
       >
         <Box sx={style}>
           <CryptoInfoComponent
+            isNegative={isNegative}
             currency={currency}
             crypto_id={crypto_id}
             current_price={current_price}
