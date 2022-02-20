@@ -1,8 +1,7 @@
+import "../../styles/cryptoInfoComponent.css";
 import React from "react";
-
-import "../../assets/styles/cryptoInfo/cryptoInfo.css";
-
 const CryptoInfoComponent = ({
+  currency,
   image,
   crypto_name,
   current_price,
@@ -11,18 +10,25 @@ const CryptoInfoComponent = ({
   price_change_percentage,
   crypto_id,
 }) => {
-  console.log(typeof current_price);
   return (
-    <div className="cryptoInfoContainer">
-      <h1>{crypto_name}</h1>
-      <h2>Market cap: {market_cap_rank}</h2>
+    <div className="crypto_info_container">
       <img src={image} alt={crypto_id} />
-      <h3>Current price: {current_price && current_price.toFixed()} Eur</h3>
-      <h3>Price change: {price_change && price_change.toFixed()} Eur in 24h</h3>
-      <h3>
-        Price change in percentage:{" "}
-        {price_change_percentage && price_change_percentage.toFixed(2)}% in 24h
-      </h3>
+      <h1>{crypto_name}</h1>
+      <h2>
+        {current_price && current_price.toFixed()}
+        {""}
+        {currency === "Eur" ? "€" : "$"}
+      </h2>
+      <div>
+        <h3>
+          {price_change && price_change.toFixed()}
+          {""}
+          {currency === "Eur" ? "€" : "$"}
+        </h3>
+        <h3>
+          {price_change_percentage && price_change_percentage.toFixed(2)}%
+        </h3>
+      </div>
     </div>
   );
 };

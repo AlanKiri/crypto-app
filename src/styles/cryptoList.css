@@ -1,0 +1,80 @@
+.crypto_list {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.crypto_list > .container {
+  justify-content: flex-start;
+}
+
+.crypto_data {
+  flex-direction: column;
+  display: flex;
+}
+
+.crypto_data > div:first-child {
+  margin-top: 100px;
+}
+
+.crypto_element {
+  height: 100px;
+  display: flex;
+  background-color: rgba(99, 95, 65, 1);
+  margin-bottom: 16px;
+  align-items: center;
+  border-radius: 20px;
+  color: white;
+  font-size: 48px;
+
+}
+
+.crypto_element_header {
+  display: flex;
+  align-items: center;
+  margin-right: 50px;
+}
+
+.crypto_element_header > p {
+  position: absolute;
+    margin: 0 0 0 15px;
+}
+
+.crypto_element_header > img {
+  margin-left: 80px;
+  height: 80px;
+  width: 80px;
+}
+
+.crypto_element_text {
+  display: flex;
+  flex-grow: 1;
+  justify-content: space-between;
+}
+.crypto_element_text > p:last-child {
+  margin-right: 50px;
+}
+
+.crypto_element_text > p {
+    align-self: center;
+    width:240px;
+    word-wrap: break-word;
+    overflow: visible;
+    margin: 0;
+  font-size: 36px;
+
+}
+
+.crypto_element_text > p:first-child {
+    font-size: 36px;
+    font-weight: 700;
+}
+
+.crypto_element > img {
+  width: 80px;
+  height: 80px;
+  margin-right: 50px;
+  margin-left: 50px;
+}

@@ -1,0 +1,119 @@
+.index {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  width: 1400px;
+  height: 700px;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.content {
+    margin-top:100px;
+  display: flex;
+  flex-grow: 1;
+  width: 100%;
+  height: 100%;
+}
+
+.content > div {
+  width: 100%;
+}
+
+.content > .left-section {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.left-section > h2 {
+  width: 500px;
+  font-size: 48px;
+  margin: 0 0 50px;
+}
+.left-section > p {
+  width: 550px;
+  font-size: 24px;
+  margin: 0 0 50px;
+}
+
+.left-section > a >  button {
+  display: flex;
+  width: 200px;
+  height: 60px;
+  background-color: rgba(32, 28, 0, 1);
+  border-radius: 20px;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: white;
+  font-weight: 600;
+  border: none;
+
+  transition: background-color 0.2s ease-in;
+}
+
+.left-section > a {
+  text-decoration: none;
+}
+
+.left-section > a> button:hover {
+  cursor: pointer;
+  color: white;
+  background-color: rgb(72, 61, 0);
+}
+
+.content > .right-section {
+  display: flex;
+
+
+
+}
+
+.right-section > div {
+  display: flex;
+  position: absolute;
+  border-radius: 20px;
+}
+
+.right-section > .bitcoin-card {
+  align-self: flex-end;
+  width: 310px;
+  height: 310px;
+  background-color: rgba(99, 95, 65, 1);
+    z-index: 2;
+}
+
+.right-section > .ethereum-card {
+
+  width: 310px;
+  height: 310px;
+    margin-left:220px ;
+  background-color: rgba(32, 28, 0, 1);
+  flex-grow: 1;
+}
+
+.bitcoin-card , .ethereum-card {
+  align-items: center;
+  flex-direction: column;
+}
+
+.bitcoin-card > img, .ethereum-card > img {
+  margin-top:20px;
+  width: 160px;
+  height: 160px;
+}
+
+.bitcoin-card > p, .ethereum-card > p{
+  color: white;
+  margin: 0;
+  font-size: 36px;
+  font-weight: 600;
+  margin-top: 15px;
+}

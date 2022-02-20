@@ -1,18 +1,22 @@
-import "../../assets/styles/header/header.css";
+import "../../styles/header.css";
+import logo from "../../images/logo.png";
+import { Link } from "react-router-dom";
 
-const Header = ({ setCurrency, page, setPage, search, setSearch }) => {
+const Header = ({ setCurrency, search, setSearch }) => {
   return (
-    <div>
-      <div className="header">
-        <div
-          className="header-logo"
-          onClick={() => {
-            setSearch("");
-            console.log(1);
-          }}
-        >
-          MYBTC<span>.COM</span>{" "}
+    <div className="header">
+      <div
+        className="header-logo-container"
+        onClick={() => {
+          setSearch("");
+        }}
+      >
+        <div className="header-logo-background">
+          <img className="header-logo" src={logo} alt="Logo" />
         </div>
+        <p>Crypto exchange</p>
+      </div>
+      <div className="header-controls">
         <div className="header-search">
           <input
             type="text"
@@ -22,42 +26,29 @@ const Header = ({ setCurrency, page, setPage, search, setSearch }) => {
               setSearch(e.target.value);
             }}
           />
-          <button
-            onClick={() => {
-              setSearch("");
-              console.log(1);
+        </div>
+        <div className="header-currency">
+          <select
+            name="currency"
+            id="currency"
+            onChange={(e) => {
+              setCurrency(e.target.value);
             }}
           >
-            Reset
-          </button>
-        </div>
-        <div className="controls">
-          <div className="header-page">
-            <input
-              type="number"
-              placeholder="Page"
-              value={page}
-              onChange={(e) => {
-                setPage(e.target.value);
-                console.log(page);
-              }}
-            />
-          </div>
-          <div className="header-currency">
-            <select
-              name="currency"
-              id="currency"
-              onChange={(e) => {
-                setCurrency(e.target.value);
-              }}
-            >
-              <option value="USD">USD</option>
-              <option value="EUR">EUR</option>
-            </select>
-          </div>
+            <option value="Usd">Usd</option>
+            <option value="Eur">Eur</option>
+          </select>
         </div>
       </div>
-      <hr style={{ color: "white" }} />
+      <div className="header-navigation">
+        <Link to="/">
+          {" "}
+          <p>Main</p>
+        </Link>
+        <Link to="/crypto">
+          <p>Crypto</p>
+        </Link>
+      </div>
     </div>
   );
 };

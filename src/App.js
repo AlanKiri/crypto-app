@@ -1,16 +1,26 @@
-import "./assets/styles/app.css";
-import "./assets/styles/shared.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import CryptoList from "./pages/cryptoList";
 import Index from "./pages";
-import CryptoInfo from "./pages/cryptoInfo";
+import { useState } from "react";
+import "./styles/app.css";
+import NotFound from "./pages/NotFound";
 
 function App() {
+  const [currency, setCurrency] = useState("USD");
+
   return (
     <BrowserRouter>
       <div className="App">
         <Routes>
-          <Route c exact path={"/"} element={<Index />} />
-          <Route path={"/:id"} element={<CryptoInfo />} />
+          <Route exact path={"/"} element={<Index />} />
+          <Route
+            exact
+            path={"/crypto"}
+            element={
+              <CryptoList currency={currency} setCurrency={setCurrency} />
+            }
+          />
+          <Route path={"*"} element={<NotFound />} />
         </Routes>
       </div>
     </BrowserRouter>
