@@ -1,0 +1,42 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+$primary_color: rgba(0, 109, 53, 1);
+$on_primary_color: rgba(255, 255, 255, 1);
+$primary_container: rgba(112, 253, 160, 1);
+$on_primary_container: rgba(0, 33, 11, 1);
+$secondary_color: rgba(80, 99, 83, 1);
+$on_secondary_color: rgba(255, 255, 255, 1);
+$on_primary_hover: rgba(80, 224, 134, 1);
+$on_secondary_hover: rgba(183, 204, 184, 1);
+@mixin max_width_height() {
+  width: 100%;
+  height: 100%;
+}
+
+html,
+body {
+  @include max_width_height();
+  background-color: $primary_color;
+}
+
+.negative {
+  color: rgba(186, 27, 27, 1) !important;
+}
+
+.container {
+  display: flex;
+  width: 1400px;
+  height: 100%;
+  justify-content: center;
+  flex-direction: column;
+}
+
+iframe {
+  display: none;
+}

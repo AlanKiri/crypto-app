@@ -19,7 +19,7 @@ const DisplayTile = ({
     transform: "translate(-50%, -50%)",
     width: 500,
     height: 500,
-    bgcolor: "rgba(99, 95, 65, 1)",
+    bgcolor: "rgba(112, 253, 160, 1)",
     borderRadius: 10,
     boxShadow: 24,
     outline: "none",
@@ -60,27 +60,28 @@ const DisplayTile = ({
         <p className={isNegative(price_change)}>
           {price_change_percentage && price_change_percentage.toFixed(2)}%
         </p>
+        <Modal
+          open={open}
+          onClose={handleClose}
+          aria-labelledby="modal-modal-title"
+          aria-describedby="modal-modal-description"
+        >
+          <Box sx={style}>
+            <CryptoInfoComponent
+              isNegative={isNegative}
+              currency={currency}
+              crypto_id={crypto_id}
+              current_price={current_price}
+              market_cap_rank={market_cap_rank}
+              price_change={price_change}
+              price_change_percentage={price_change_percentage}
+              image={image}
+              crypto_name={crypto_name}
+              handleClose={handleClose}
+            />
+          </Box>
+        </Modal>
       </div>
-      <Modal
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-      >
-        <Box sx={style}>
-          <CryptoInfoComponent
-            isNegative={isNegative}
-            currency={currency}
-            crypto_id={crypto_id}
-            current_price={current_price}
-            market_cap_rank={market_cap_rank}
-            price_change={price_change}
-            price_change_percentage={price_change_percentage}
-            image={image}
-            crypto_name={crypto_name}
-          />
-        </Box>
-      </Modal>
     </div>
   );
 };

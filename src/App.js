@@ -2,7 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import CryptoList from "./pages/cryptoList";
 import Index from "./pages";
 import { useState } from "react";
-import "./styles/app.css";
+import "./styles/app.scss";
 import NotFound from "./pages/NotFound";
 
 function App() {

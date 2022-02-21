@@ -1,0 +1,113 @@
+@use "app";
+.index {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  margin-top: 100px;
+  display: flex;
+  flex-grow: 1;
+  width: 100%;
+  height: 100%;
+
+  div {
+    width: 100%;
+  }
+
+  .left-section {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .left-section > h2 {
+    width: 500px;
+    font-size: 48px;
+    margin: 0 0 50px;
+    color: app.$on_primary_color;
+  }
+  .left-section > p {
+    width: 550px;
+    font-size: 24px;
+    margin: 0 0 50px;
+    color: app.$on_primary_color;
+  }
+
+  .left-section > a > button {
+    display: flex;
+    width: 200px;
+    height: 60px;
+    background-color: app.$primary_container;
+    border-radius: 20px;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: white;
+    font-weight: 600;
+    border: none;
+
+    transition: background-color 0.2s ease-in;
+  }
+
+  .left-section > a {
+    text-decoration: none;
+  }
+
+  .left-section > a > button:hover {
+    cursor: pointer;
+    color: white;
+    background-color: app.$on_primary_hover;
+  }
+
+  .right-section {
+    display: flex;
+  }
+
+  .right-section > div {
+    display: flex;
+    position: absolute;
+    border-radius: 20px;
+  }
+
+  .right-section > .bitcoin-card {
+    align-self: flex-end;
+    width: 310px;
+    height: 310px;
+    background-color: app.$primary_container;
+    z-index: 2;
+  }
+
+  .right-section > .ethereum-card {
+    width: 310px;
+    height: 310px;
+    margin-left: 220px;
+    background-color: app.$secondary_color;
+    flex-grow: 1;
+  }
+
+  .bitcoin-card,
+  .ethereum-card {
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .bitcoin-card > img,
+  .ethereum-card > img {
+    margin-top: 20px;
+    width: 160px;
+    height: 160px;
+  }
+
+  .bitcoin-card > p,
+  .ethereum-card > p {
+    color: white;
+    margin: 0;
+    font-size: 36px;
+    font-weight: 600;
+    margin-top: 15px;
+  }
+}

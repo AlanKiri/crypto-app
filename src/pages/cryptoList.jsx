@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Header from "../components/header/header";
 import DisplayTile from "../components/displayTile/displayTile";
 import useFetchCrypto from "../hooks/useFetchCrypto";
-import "../styles/cryptoList.css";
+import "../styles/cryptoList.scss";
 
 const CryptoList = ({ currency, setCurrency }) => {
   const [page, setPage] = useState(1);
@@ -17,6 +17,7 @@ const CryptoList = ({ currency, setCurrency }) => {
           setSearch={setSearch}
           displayControls={true}
           indexPage={false}
+          currency={currency}
         />
         <div className="crypto_data">
           {!search &&

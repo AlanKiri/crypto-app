@@ -1,4 +1,4 @@
-import "../../styles/header.css";
+import "../../styles/header.scss";
 import logo from "../../images/logo.png";
 import { Link } from "react-router-dom";
 
@@ -8,6 +8,7 @@ const Header = ({
   setSearch,
   displayControls,
   indexPage,
+  currency,
 }) => {
   return (
     <div className="header">
@@ -41,6 +42,7 @@ const Header = ({
               onChange={(e) => {
                 setCurrency(e.target.value);
               }}
+              value={currency}
             >
               <option value="Usd">Usd</option>
               <option value="Eur">Eur</option>

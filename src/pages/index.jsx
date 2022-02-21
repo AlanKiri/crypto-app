@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "../components/header/header";
-import "../styles/index.css";
+import "../styles/index.scss";
 import bitcoin from "../images/bitcoin.png";
 import ethereum from "../images/ethereum.png";
 import { Link } from "react-router-dom";

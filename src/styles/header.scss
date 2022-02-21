@@ -1,0 +1,105 @@
+@use "app";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap");
+*,
+:before,
+:after {
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+.header {
+  width: 100%;
+  height: 70px;
+  max-height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 1;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  margin-top: 100px;
+  background-color: app.$primary_color;
+  padding: 10px;
+  color: app.$on_primary_color;
+
+  .header-logo-container {
+    display: flex;
+    align-items: center;
+  }
+  .header-logo {
+    width: 40px;
+    height: 40px;
+    filter: invert(100);
+  }
+  .header-logo-background {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    height: 60px;
+    width: 60px;
+    margin-right: 18px;
+  }
+  .header-logo-container > p {
+    font-weight: 800;
+    font-size: 24px;
+  }
+  .header-controls {
+    display: flex;
+  }
+  .header-search {
+    width: 84px;
+    height: 29px;
+    margin-right: 50px;
+  }
+  .header-search > input {
+    width: 84px;
+    height: 29px;
+    outline: none;
+    font-size: 24px;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+    background-color: transparent;
+    color: app.$on_primary_color;
+  }
+  .header-currency {
+    width: 52px;
+    height: 29px;
+  }
+  .header-currency > select {
+    width: 70px;
+    height: 29px;
+    border: none;
+    font-size: 24px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+    background-color: transparent;
+    color: app.$on_primary_color;
+  }
+  .header-navigation {
+    display: flex;
+  }
+  .header-navigation > a {
+    font-size: 24px;
+    text-decoration: none;
+    color: app.$on_primary_color;
+    transition: color 0.3s ease-in;
+  }
+
+  .header-navigation > a:hover {
+    color: app.$on_primary_hover;
+    cursor: pointer;
+  }
+
+  .header-navigation > a:first-child {
+    margin-right: 50px;
+  }
+
+  .header-navigation-active-page {
+    border-bottom: 1px solid rgba(99, 95, 65, 0.5);
+    font-weight: 700;
+  }
+  .marked_page {
+    text-decoration: underline 3px rgba(99, 95, 65, 0.5);
+  }
+}

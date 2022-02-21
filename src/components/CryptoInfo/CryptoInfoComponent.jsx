@@ -1,4 +1,4 @@
-import "../../styles/cryptoInfoComponent.css";
+import "../../styles/cryptoInfoComponent.scss";
 import React from "react";
 const CryptoInfoComponent = ({
   currency,
@@ -10,9 +10,11 @@ const CryptoInfoComponent = ({
   price_change_percentage,
   crypto_id,
   isNegative,
+  handleClose,
 }) => {
   return (
     <div className="crypto_info_container">
+      <div className={"crypto_info_controls"}></div>
       <img src={image} alt={crypto_id} />
       <h1>{crypto_name}</h1>
       <h2>
